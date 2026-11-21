@@ -20,8 +20,13 @@ if (menuButton && navigation) {
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
+// Reveal content as it enters the viewport, with a gentle stagger per section.
 const revealItems = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window) {
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (reduceMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
   const observer = new IntersectionObserver((entries, currentObserver) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -29,8 +34,12 @@ if ("IntersectionObserver" in window) {
         currentObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
+  }, { threshold: 0.12, rootMargin: "0px 0px -35px 0px" });
+
+  revealItems.forEach((item) => {
+    const siblings = [...item.parentElement.querySelectorAll(":scope > .reveal")];
+    const index = Math.max(0, siblings.indexOf(item));
+    item.style.setProperty("--reveal-delay", `${Math.min(index * 90, 270)}ms`);
+    observer.observe(item);
+  });
 }
