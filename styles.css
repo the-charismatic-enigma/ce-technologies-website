@@ -154,3 +154,51 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
   border-radius:3px;
 }
 .menu-toggle:focus-visible{outline-offset:3px}
+
+
+/* Premium project presentation — clear hierarchy, depth and responsive rhythm */
+.work-heading>p{max-width:280px}
+.project-grid{align-items:stretch;gap:16px}
+.project-card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  border:1px solid rgba(164,184,222,.17);
+  border-radius:3px;
+  overflow:hidden;
+  background:linear-gradient(155deg,rgba(20,34,59,.72),rgba(9,17,34,.9));
+  box-shadow:0 12px 34px rgba(0,0,0,.10);
+}
+.project-card:hover{
+  border-color:rgba(115,174,255,.48);
+  box-shadow:0 22px 48px rgba(0,0,0,.22),0 0 0 1px rgba(104,165,255,.08);
+}
+.project-art{height:218px;flex:0 0 auto}
+.project-details{display:flex;flex:1;flex-direction:column;padding:19px 17px 15px}
+.project-category{display:flex;align-items:center;gap:8px}
+.project-category:before{content:"";width:15px;height:1px;background:currentColor;opacity:.8}
+.project-details h3{font-size:25px;letter-spacing:-1px;margin:10px 0 7px}
+.project-details>p{min-height:66px;max-width:34ch}
+.project-footer{margin-top:auto;padding-top:14px}
+.project-footer span:last-child{border:1px solid rgba(133,177,237,.24);border-radius:2px;padding:4px 7px;font-size:6px;letter-spacing:.85px}
+.project-number{padding:5px 7px;border:1px solid rgba(235,246,255,.18);border-radius:2px;background:rgba(5,12,25,.22);backdrop-filter:blur(8px)}
+.capability{position:relative}
+.capability:after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:linear-gradient(90deg,#68a5ff,#7bdce8);transition:width .45s var(--motion-ease)}
+.capability:hover:after{width:100%}
+.studio-copy{max-width:390px}
+.contact-main{max-width:650px}
+.contact-email{font-size:clamp(12px,1.4vw,15px)}
+@media(max-width:900px){
+  .project-art{height:185px}
+  .project-details{padding:16px 13px 13px}
+  .project-details h3{font-size:22px}
+  .project-details>p{min-height:88px}
+}
+@media(max-width:650px){
+  .project-grid{gap:18px}
+  .project-art{height:220px}
+  .project-details{padding:18px 16px 15px}
+  .project-details>p{min-height:0;max-width:42ch;margin-bottom:18px}
+  .project-card:hover{transform:none}
+  .capability:hover{padding-left:5px}
+}
