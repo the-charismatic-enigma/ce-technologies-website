@@ -655,3 +655,15 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
 @media(max-width:580px){.services{padding:55px 0 60px}.services-heading{margin:22px 0 24px}.service-grid{grid-template-columns:1fr}.service-card:last-child{grid-column:auto}.service-card{min-height:0;padding:22px 19px}.service-card h3{margin-top:15px}}
 @media(prefers-reduced-motion:reduce){.service-card{transition:none}}
 @media print{.services{break-inside:avoid}.service-card{background:#fff!important;border:1px solid #bbb;color:#111;break-inside:avoid}.service-card h3,.service-card>a,.service-card li{color:#111!important}.service-card p,.services-heading>p,.services-footnote{color:#444!important}}
+
+
+/* V18 — enquiry form clarity and live character count */
+.enquiry-message-meta #enquiry-message-count{
+  color:#9db9d9;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.enquiry-message-meta #enquiry-message-help{color:#91a4bd}
+@media(prefers-reduced-motion:reduce){
+  .enquiry-message-meta #enquiry-message-count{transition:none}
+}
