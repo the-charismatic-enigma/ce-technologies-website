@@ -145,3 +145,12 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
   .nav{background:#0b1426;border-color:var(--line);box-shadow:0 18px 38px rgba(0,0,0,.3)}
   .nav-contact{border-color:rgba(166,190,230,.4)}
 }
+
+
+/* Keyboard accessibility polish */
+:where(a, button):focus-visible{
+  outline:2px solid #7bdce8;
+  outline-offset:4px;
+  border-radius:3px;
+}
+.menu-toggle:focus-visible{outline-offset:3px}

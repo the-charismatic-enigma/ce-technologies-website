@@ -8,6 +8,15 @@ if (menuButton && navigation) {
     menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   });
 
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navigation.classList.contains("open")) {
+      navigation.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation");
+      menuButton.focus();
+    }
+  });
+
   navigation.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navigation.classList.remove("open");
