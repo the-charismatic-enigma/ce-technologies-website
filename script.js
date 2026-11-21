@@ -140,7 +140,7 @@ if (workFilters.length && projectCards.length) {
         item.setAttribute("aria-pressed", String(active));
       });
       if (workFilterStatus) {
-        const label = button.textContent.trim().replace(/\\s+\\d+$/, "");
+        const label = button.childNodes[0].textContent.trim();
         workFilterStatus.textContent = selected === "all"
           ? "Showing all 3 projects"
           : `Showing ${visibleCount} project in ${label}`;
