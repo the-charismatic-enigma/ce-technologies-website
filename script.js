@@ -94,3 +94,27 @@ if ("IntersectionObserver" in window && linkedSections.length) {
 
   linkedSections.forEach(({ section }) => sectionObserver.observe(section));
 }
+
+
+// Pointer-responsive hero lighting is limited to fine pointers and respects reduced motion.
+const heroComposition = document.querySelector(".hero-composition");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+if (heroComposition && finePointer && !reduceMotion) {
+  heroComposition.addEventListener("pointermove", (event) => {
+    const bounds = heroComposition.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+    const tiltX = (0.5 - y) * 3.2;
+    const tiltY = (x - 0.5) * 3.2;
+    heroComposition.style.setProperty("--pointer-x", `${(x * 100).toFixed(1)}%`);
+    heroComposition.style.setProperty("--pointer-y", `${(y * 100).toFixed(1)}%`);
+    heroComposition.style.setProperty("--tilt-x", `${tiltY.toFixed(2)}deg`);
+    heroComposition.style.setProperty("--tilt-y", `${tiltX.toFixed(2)}deg`);
+  });
+  heroComposition.addEventListener("pointerleave", () => {
+    heroComposition.style.setProperty("--pointer-x", "50%");
+    heroComposition.style.setProperty("--pointer-y", "50%");
+    heroComposition.style.setProperty("--tilt-x", "0deg");
+    heroComposition.style.setProperty("--tilt-y", "0deg");
+  });
+}
