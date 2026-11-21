@@ -52,3 +52,45 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
     observer.observe(item);
   });
 }
+
+
+// Keep a quiet progress cue and identify the section currently in view.
+const progressBar = document.querySelector(".reading-progress span");
+let progressFrame = 0;
+
+function updateReadingProgress(){
+  progressFrame = 0;
+  if (!progressBar) return;
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+  progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+}
+
+function requestProgressUpdate(){
+  if (!progressFrame) progressFrame = window.requestAnimationFrame(updateReadingProgress);
+}
+
+window.addEventListener("scroll", requestProgressUpdate, { passive: true });
+window.addEventListener("resize", requestProgressUpdate, { passive: true });
+updateReadingProgress();
+
+const sectionLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+const linkedSections = sectionLinks
+  .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
+  .filter((item) => item.section);
+
+if ("IntersectionObserver" in window && linkedSections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+
+    linkedSections.forEach(({ link, section }) => {
+      if (section === visible.target) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  }, { rootMargin: "-22% 0px -58% 0px", threshold: [0, .15, .35, .6] });
+
+  linkedSections.forEach(({ section }) => sectionObserver.observe(section));
+}
