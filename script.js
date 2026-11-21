@@ -150,7 +150,7 @@ if (workFilters.length && projectCards.length) {
 }
 
 
-// V15 — prepare a visitor-controlled email; no form data is sent to a server.
+// V16 — compose a polished, visitor-controlled enquiry email.
 const enquiryForm = document.querySelector("#enquiry-form");
 if (enquiryForm) {
   enquiryForm.addEventListener("submit", (event) => {
@@ -162,18 +162,29 @@ if (enquiryForm) {
     const name = String(formData.get("name") || "").trim();
     const replyEmail = String(formData.get("replyEmail") || "").trim();
     const message = String(formData.get("message") || "").trim();
-    const subject = `CE Technologies enquiry — ${interest}`;
+    const subject = `Enquiry | ${interest} — CE Technologies`;
     const body = [
-      `Topic: ${interest}`,
-      name ? `Name: ${name}` : "",
-      replyEmail ? `Reply email: ${replyEmail}` : "",
+      "CE TECHNOLOGIES",
+      "BUILD WHAT MATTERS.",
       "",
-      message
-    ].filter((line, index, lines) => line !== "" || (index > 0 && lines[index - 1] !== "")).join("\n");
+      "A NEW CONVERSATION",
+      "────────────────────────",
+      `Topic       : ${interest}`,
+      `Name        : ${name || "Not provided"}`,
+      `Reply email : ${replyEmail || "Not provided"}`,
+      "",
+      "MESSAGE",
+      "────────────────────────",
+      message,
+      "",
+      "────────────────────────",
+      "Sent via the CE Technologies website enquiry form.",
+      "Please reply directly to the sender if a reply address was provided."
+    ].join("\\n");
 
     const mailto = `mailto:contact.cetechnologies@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const note = document.querySelector("#enquiry-note");
-    if (note) note.textContent = "Your email app should open with your draft. Review it and choose Send there; this website has not sent or stored your message.";
+    if (note) note.textContent = "Your email draft is being prepared. Review the recipient, subject and message in your email app before sending. Nothing has been sent by this website.";
     window.location.href = mailto;
   });
 }
