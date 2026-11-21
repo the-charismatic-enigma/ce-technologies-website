@@ -162,6 +162,13 @@ if (enquiryForm) {
     const name = String(formData.get("name") || "").trim();
     const replyEmail = String(formData.get("replyEmail") || "").trim();
     const message = String(formData.get("message") || "").trim();
+    if (!message) {
+      const messageField = enquiryForm.querySelector("#enquiry-message");
+      const note = document.querySelector("#enquiry-note");
+      if (note) note.textContent = "Please add a short description of your idea before creating the email draft.";
+      messageField?.focus();
+      return;
+    }
     const subject = `Enquiry | ${interest} — CE Technologies`;
     const body = [
       "CE TECHNOLOGIES",
@@ -180,11 +187,24 @@ if (enquiryForm) {
       "────────────────────────",
       "Sent via the CE Technologies website enquiry form.",
       "Please reply directly to the sender if a reply address was provided."
-    ].join("\\n");
+    ].join("\n");
 
     const mailto = `mailto:contact.cetechnologies@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const note = document.querySelector("#enquiry-note");
     if (note) note.textContent = "Your email draft is being prepared. Review the recipient, subject and message in your email app before sending. Nothing has been sent by this website.";
     window.location.href = mailto;
   });
+}
+
+
+// V18 — live message guidance and accurate email formatting.
+const enquiryMessage = document.querySelector("#enquiry-message");
+const enquiryMessageCount = document.querySelector("#enquiry-message-count");
+if (enquiryMessage && enquiryMessageCount) {
+  const updateMessageCount = () => {
+    const length = enquiryMessage.value.length;
+    enquiryMessageCount.textContent = `${length.toLocaleString()} / 3,000`;
+  };
+  enquiryMessage.addEventListener("input", updateMessageCount);
+  updateMessageCount();
 }
