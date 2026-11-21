@@ -202,3 +202,79 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
   .project-card:hover{transform:none}
   .capability:hover{padding-left:5px}
 }
+
+
+/* Signature hero — a living signal motif and more deliberate section rhythm */
+.hero-composition{
+  background-image:
+    radial-gradient(circle at 74% 48%,rgba(104,165,255,.15),transparent 31%),
+    linear-gradient(145deg,rgba(21,43,82,.96),rgba(10,25,48,.98) 62%,rgba(10,50,72,.94));
+}
+.composition-signal{
+  position:absolute;
+  z-index:2;
+  right:28px;
+  top:50%;
+  display:flex;
+  align-items:center;
+  gap:4px;
+  height:38px;
+  transform:translateY(-50%);
+  opacity:.82;
+}
+.composition-signal span{
+  display:block;
+  width:2px;
+  height:9px;
+  border-radius:2px;
+  background:linear-gradient(180deg,#7de4ef,#70aaff);
+  transform-origin:center;
+  animation:signal-wave 1.7s ease-in-out infinite;
+}
+.composition-signal span:nth-child(2){height:18px;animation-delay:.12s}
+.composition-signal span:nth-child(3){height:29px;animation-delay:.24s}
+.composition-signal span:nth-child(4){height:15px;animation-delay:.36s}
+.composition-signal span:nth-child(5){height:23px;animation-delay:.48s}
+.composition-signal i{
+  position:absolute;
+  width:6px;
+  height:6px;
+  right:-12px;
+  top:-5px;
+  border-radius:50%;
+  background:#7de4ef;
+  box-shadow:0 0 14px rgba(125,228,239,.9);
+  animation:signal-pulse 2.2s ease-in-out infinite;
+}
+.hero-composition .composition-mark{ text-shadow:0 8px 42px rgba(73,145,255,.12) }
+.hero-composition:before{border-color:rgba(121,174,245,.27)}
+.hero-composition:after{border-color:rgba(121,174,245,.16)}
+.studio,.capabilities,.work,.contact{isolation:isolate}
+.studio:before,.capabilities:before,.work:before,.contact:before{
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:0;
+  width:clamp(42px,9vw,118px);
+  height:1px;
+  background:linear-gradient(90deg,#7bdce8,rgba(104,165,255,0));
+}
+.project-card{position:relative}
+.project-card:focus-within{outline:1px solid rgba(123,220,232,.55);outline-offset:4px}
+.project-art{transition:filter .45s ease}
+.project-card:hover .project-art{filter:saturate(1.12) brightness(1.06)}
+@keyframes signal-wave{
+  0%,100%{transform:scaleY(.48);opacity:.58}
+  50%{transform:scaleY(1);opacity:1}
+}
+@keyframes signal-pulse{
+  0%,100%{transform:scale(.72);opacity:.65}
+  50%{transform:scale(1.25);opacity:1}
+}
+@media(max-width:650px){
+  .composition-signal{right:22px;top:48%;transform:translateY(-50%) scale(.85)}
+}
+@media(prefers-reduced-motion:reduce){
+  .composition-signal span,.composition-signal i{animation:none}
+  .composition-signal span{transform:scaleY(.72)}
+}
