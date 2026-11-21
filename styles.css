@@ -502,3 +502,50 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
   .project-card,.hero-composition{break-inside:avoid;box-shadow:none!important}
   a{color:#111!important;text-decoration:underline}
 }
+
+
+/* V14 — a more expressive, explorable project gallery */
+.work-controls{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin:0 0 18px;padding:12px 0;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+.work-controls-label{font-size:8px;font-weight:700;letter-spacing:1.4px;color:#8d9bb0;margin-right:8px}
+.work-filter{
+  appearance:none;border:1px solid rgba(145,165,195,.22);border-radius:2px;
+  padding:8px 11px;background:rgba(255,255,255,.025);color:#aebdd2;
+  font:600 9px var(--font);cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s
+}
+.work-filter:hover{border-color:rgba(123,225,233,.6);color:#f2f7ff;transform:translateY(-1px)}
+.work-filter.is-active{background:linear-gradient(105deg,rgba(104,165,255,.2),rgba(123,225,233,.12));border-color:rgba(123,225,233,.65);color:#eff8ff;box-shadow:inset 0 0 18px rgba(104,165,255,.06)}
+.work-filter span{margin-left:8px;color:var(--v14-cyan,#7be3e9);font-size:8px}
+.work-filter-status{margin-left:auto;color:#8493a8;font-size:8px;letter-spacing:.4px}
+.project-card{transform:translateY(0);transition:transform .35s cubic-bezier(.2,.7,.2,1),opacity .25s,border-color .3s}
+.project-card[hidden]{display:none}
+.project-art{isolation:isolate}
+.project-art:after{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.1),transparent 42%,rgba(0,0,0,.13));
+  opacity:.8;transition:opacity .35s
+}
+.project-card:hover .project-art:after{opacity:.35}
+.project-art-kicker{
+  position:absolute;z-index:2;top:15px;left:16px;
+  color:rgba(238,245,255,.68);font-size:7px;font-weight:700;letter-spacing:1.4px
+}
+.art-fresh .project-art-kicker,.art-friday .project-art-kicker{color:rgba(28,42,39,.58)}
+.project-card:hover{transform:translateY(-5px)}
+.project-card[hidden]{pointer-events:none}
+.project-detail summary{transition:color .2s}
+.project-detail summary:hover{color:#fff}
+.project-detail summary span{display:inline-block;transition:transform .25s}
+.project-detail[open] summary span{transform:rotate(45deg)}
+@media(max-width:650px){
+ .work-controls{gap:6px}
+ .work-controls-label{width:100%;margin:0 0 3px}
+ .work-filter-status{width:100%;margin:4px 0 0}
+ .project-card:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .work-filter,.project-card,.project-art:after{transition:none}
+}

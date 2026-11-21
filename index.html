@@ -105,17 +105,25 @@
       <section class="work section" id="work">
         <div class="section-label reveal"><span>03</span> / SELECTED WORK</div>
         <div class="work-heading reveal"><h2>Ideas in<br><em>progress.</em></h2><p>A look at the concepts and products we're actively exploring. Each project is an opportunity to test, learn and build with purpose.</p></div>
+        <div class="work-controls" role="group" aria-label="Filter selected work">
+          <span class="work-controls-label">EXPLORE BY</span>
+          <button class="work-filter is-active" type="button" data-filter="all" aria-pressed="true">All work <span>03</span></button>
+          <button class="work-filter" type="button" data-filter="commerce" aria-pressed="false">Commerce</button>
+          <button class="work-filter" type="button" data-filter="ai" aria-pressed="false">AI systems</button>
+          <button class="work-filter" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          <span class="work-filter-status" aria-live="polite">Showing all 3 projects</span>
+        </div>
         <div class="project-grid">
-          <article class="project-card reveal">
-            <div class="project-art art-fresh"><div class="fresh-brand">fresh<span>cart.</span></div><div class="fresh-art-line"></div><div class="fresh-art-caption">GROCERY, REIMAGINED.</div><span class="project-number">01 / 03</span></div>
+          <article class="project-card reveal" data-category="commerce">
+            <div class="project-art art-fresh"><span class="project-art-kicker">01 / COMMERCE</span><div class="fresh-brand">fresh<span>cart.</span></div><div class="fresh-art-line"></div><div class="fresh-art-caption">GROCERY, REIMAGINED.</div><span class="project-number">01 / 03</span></div>
             <div class="project-details"><div class="project-category">COMMERCE · PRODUCT CONCEPT</div><h3>FreshCart</h3><p>Rethinking everyday grocery shopping through a more intuitive, organised and intelligent digital experience.</p><div class="project-footer"><span>WEB · AI</span><span>IN DEVELOPMENT</span></div><details class="project-detail"><summary>Explore the concept <span>＋</span></summary><div><b>THE EXPLORATION</b><p>A customer-first grocery experience focused on clear product discovery, useful shopping flows and the foundations for budget-aware, AI-assisted planning.</p><b>FOCUS AREAS</b><p>Shopping experience · Product discovery · Intelligent planning</p></div></details></div>
           </article>
-          <article class="project-card reveal">
-            <div class="project-art art-jarvis"><div class="jarvis-word">J<span>.</span></div><div class="jarvis-caption">PERSONAL INTELLIGENCE</div><span class="project-number">02 / 03</span></div>
+          <article class="project-card reveal" data-category="ai">
+            <div class="project-art art-jarvis"><span class="project-art-kicker">02 / INTELLIGENCE</span><div class="jarvis-word">J<span>.</span></div><div class="jarvis-caption">PERSONAL INTELLIGENCE</div><span class="project-number">02 / 03</span></div>
             <div class="project-details"><div class="project-category">AI · PERSONAL ASSISTANT</div><h3>JARVIS AI</h3><p>A modular personal assistant exploring connected AI models, natural interaction and useful desktop workflows.</p><div class="project-footer"><span>PYTHON · AI</span><span>EXPERIMENTAL</span></div><details class="project-detail"><summary>Explore the concept <span>＋</span></summary><div><b>THE EXPLORATION</b><p>A provider-independent assistant architecture designed to connect multiple AI services while preserving existing modules and workflows.</p><b>FOCUS AREAS</b><p>AI integration · Voice interaction · Desktop productivity</p></div></details></div>
           </article>
-          <article class="project-card reveal">
-            <div class="project-art art-friday"><div class="friday-word">F<span>.</span></div><div class="friday-caption">ENGINEERING, AUGMENTED.</div><span class="project-number">03 / 03</span></div>
+          <article class="project-card reveal" data-category="engineering">
+            <div class="project-art art-friday"><span class="project-art-kicker">03 / ENGINEERING</span><div class="friday-word">F<span>.</span></div><div class="friday-caption">ENGINEERING, AUGMENTED.</div><span class="project-number">03 / 03</span></div>
             <div class="project-details"><div class="project-category">AI · DEVELOPER WORKFLOWS</div><h3>F.R.I.D.A.Y.</h3><p>An AI engineering partner concept for research, development, debugging and structured project workflows.</p><div class="project-footer"><span>AI · AUTOMATION</span><span>IN DEVELOPMENT</span></div><details class="project-detail"><summary>Explore the concept <span>＋</span></summary><div><b>THE EXPLORATION</b><p>A modular productivity agent concept to support project work with reversible actions, isolated testing and approval before destructive changes.</p><b>FOCUS AREAS</b><p>Research · Development support · Workflow automation</p></div></details></div>
           </article>
         </div>
