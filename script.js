@@ -118,3 +118,33 @@ if (heroComposition && finePointer && !reduceMotion) {
     heroComposition.style.setProperty("--tilt-y", "0deg");
   });
 }
+
+
+// V14 — accessible project filters; the full portfolio remains visible by default.
+const workFilters = [...document.querySelectorAll(".work-filter")];
+const projectCards = [...document.querySelectorAll(".project-card[data-category]")];
+const workFilterStatus = document.querySelector(".work-filter-status");
+if (workFilters.length && projectCards.length) {
+  workFilters.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selected = button.dataset.filter;
+      let visibleCount = 0;
+      projectCards.forEach((card) => {
+        const show = selected === "all" || card.dataset.category === selected;
+        card.hidden = !show;
+        if (show) visibleCount += 1;
+      });
+      workFilters.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      if (workFilterStatus) {
+        const label = button.textContent.trim().replace(/\\s+\\d+$/, "");
+        workFilterStatus.textContent = selected === "all"
+          ? "Showing all 3 projects"
+          : `Showing ${visibleCount} project in ${label}`;
+      }
+    });
+  });
+}
