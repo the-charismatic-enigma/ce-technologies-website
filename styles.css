@@ -66,3 +66,82 @@ html{scroll-behavior:smooth}
   .hero-composition:hover,.project-card:hover{transform:none;box-shadow:none}
   .reveal{transform:translate3d(0,14px,0)}
 }
+
+
+/* CE Technologies — Midnight Signal visual identity */
+:root{
+  --paper:#080e1d;
+  --ink:#f3f6ff;
+  --muted:#a6b2c8;
+  --line:rgba(164,184,222,.19);
+  --blue:#68a5ff;
+  --font:'DM Sans',sans-serif;
+  --display:'Manrope',sans-serif;
+  color-scheme:dark;
+}
+body{
+  background:
+    radial-gradient(ellipse at 78% 5%,rgba(35,91,190,.20),transparent 34rem),
+    radial-gradient(ellipse at 6% 44%,rgba(21,126,160,.09),transparent 32rem),
+    #080e1d;
+  color:var(--ink);
+}
+.site-shell{background:transparent}
+.site-header{border-color:var(--line);background:rgba(8,14,29,.78);backdrop-filter:blur(16px)}
+.brand-wordmark small,.nav,.hero-topline,.hero-bottom,.section-label,.studio-copy p,.capabilities-head>p,.work-heading>p,.capability p,.project-details>p,.project-footer,.contact-main>p,.contact-side p,.footer p,.footer-links{color:#a6b2c8}
+.nav a:hover,.footer a:hover{color:#8fc0ff}
+.nav-contact{border-color:rgba(166,190,230,.4);color:#f3f6ff}
+.nav-contact:hover{background:#eaf3ff;border-color:#eaf3ff;color:#091226}
+h1,h2,h3,.brand-symbol,.brand-wordmark,.composition-mark,.contact-email{color:#f3f6ff}
+h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient(100deg,#70aaff 8%,#7de4ef 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-intro{color:#b6c2d6}
+.hero-composition{
+  background:linear-gradient(145deg,rgba(21,43,82,.96),rgba(10,25,48,.98) 62%,rgba(10,50,72,.94));
+  border-color:rgba(115,166,236,.32);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 24px 70px rgba(0,0,0,.22);
+}
+.hero-composition:before,.hero-composition:after{border-color:rgba(121,174,245,.22)}
+.composition-top,.composition-bottom{color:#b9c9e2}
+.composition-rule{background:rgba(173,201,242,.3)}
+.composition-index{color:#93a9c9}
+.hero-bottom{border-color:var(--line)}
+.hero-bottom a{color:#c8d5e9}
+.studio,.capabilities,.work,.contact{border-color:var(--line)}
+.capability-list,.capability{border-color:var(--line)}
+.capability:hover{background:rgba(87,153,255,.075)}
+.capability-no,.capability-arrow{color:#79b4ff}
+.project-art{box-shadow:inset 0 0 0 1px rgba(255,255,255,.07)}
+.art-fresh{background:linear-gradient(135deg,#123d3a,#1b665b 55%,#173c55);color:#d9fff0}
+.fresh-art-line{border-color:rgba(196,255,230,.24)}
+.project-number{color:rgba(235,246,255,.62)}
+.art-jarvis{background:linear-gradient(135deg,#101a32,#1c3c70 60%,#142d4d);color:#eff6ff}
+.jarvis-word span{color:#7fc7ff}
+.jarvis-caption{color:#b8d9ff}
+.art-friday{background:linear-gradient(135deg,#18213b,#273a66 60%,#163e58);color:#f0f5ff}
+.friday-word span{color:#7bdce8}
+.friday-caption{color:#b8c8e2}
+.project-category{color:#82b9ff}
+.project-footer{border-color:var(--line)}
+.project-footer span:last-child{color:#d1def1}
+.contact-side{border-color:var(--line)}
+.contact-side>span{color:#82b9ff}
+.contact-email{border-color:rgba(165,192,235,.38)}
+.footer{border-color:var(--line)}
+.footer-links a{color:#d6e4fa}
+.menu-toggle{border-color:var(--line);background:rgba(255,255,255,.025)}
+.menu-toggle span{background:#edf4ff}
+.primary-link{border-color:rgba(188,207,239,.6);color:#f3f6ff}
+.primary-link:hover{color:#8fc5ff}
+.hero-copy .eyebrow{color:#82b9ff}
+.eyebrow-line{background:linear-gradient(90deg,#69a7ff,#7be2e8)}
+.composition-bottom b{color:#7be2e8}
+.capability-arrow{color:#a6bce0}
+.capability:hover .capability-arrow{color:#8fc5ff}
+.contact-email:hover{color:#8fc5ff}
+.hero-composition:hover{box-shadow:0 28px 85px rgba(21,102,208,.2),inset 0 1px 0 rgba(255,255,255,.08)}
+.project-art:after{background:linear-gradient(115deg,transparent 25%,rgba(190,225,255,.20) 48%,transparent 68%)}
+.reveal{will-change:opacity,transform}
+@media(max-width:650px){
+  .nav{background:#0b1426;border-color:var(--line);box-shadow:0 18px 38px rgba(0,0,0,.3)}
+  .nav-contact{border-color:rgba(166,190,230,.4)}
+}
