@@ -378,3 +378,31 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
   .composition-signal span,.composition-signal i{animation:none!important}
   .composition-signal span{transform:scaleY(.82)}
 }
+
+
+/* Interactive hero light field — subtle desktop depth, static fallback everywhere */
+.hero-composition{
+  --pointer-x:50%;
+  --pointer-y:50%;
+  --tilt-x:0deg;
+  --tilt-y:0deg;
+  background-image:
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y),rgba(111,190,255,.22),transparent 38%),
+    radial-gradient(circle at 74% 48%,rgba(104,165,255,.15),transparent 31%),
+    linear-gradient(145deg,rgba(21,43,82,.96),rgba(10,25,48,.98) 62%,rgba(10,50,72,.94));
+  transition:transform .55s var(--motion-ease),box-shadow .5s ease,background-position .3s ease;
+  transform-style:preserve-3d;
+}
+@media(hover:hover) and (pointer:fine){
+  .hero-composition:hover{
+    transform:perspective(1100px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x)) translateY(-5px);
+  }
+}
+@media(max-width:650px){
+  .hero-composition{background-image:
+    radial-gradient(circle at 72% 38%,rgba(111,190,255,.17),transparent 42%),
+    linear-gradient(145deg,rgba(21,43,82,.96),rgba(10,25,48,.98) 62%,rgba(10,50,72,.94));}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-composition{--tilt-x:0deg!important;--tilt-y:0deg!important;}
+}
