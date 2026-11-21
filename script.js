@@ -169,7 +169,7 @@ if (enquiryForm) {
       replyEmail ? `Reply email: ${replyEmail}` : "",
       "",
       message
-    ].filter((line, index, lines) => line !== "" || (index > 0 && lines[index - 1] !== "")).join("\\n");
+    ].filter((line, index, lines) => line !== "" || (index > 0 && lines[index - 1] !== "")).join("\n");
 
     const mailto = `mailto:contact.cetechnologies@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const note = document.querySelector("#enquiry-note");
