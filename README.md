@@ -5,7 +5,14 @@ The official website for **Charismatic Enigma Technologies (CE Technologies)**.
 > Build what matters.
 
 ## About
-CE Technologies is an independent, student-led technology initiative exploring software development, artificial intelligence and digital experiences.
+CE Technologies is an independent technology studio exploring websites, software prototypes, AI integrations and practical workflows.
+
+## Areas of work
+- **Websites & digital presence** — responsive sites and clear digital communication.
+- **AI & workflow prototypes** — research-led integrations with human review.
+- **Software & automation** — modular tools, testing and iterative improvement.
+
+Engagement scope, timing and feasibility are discussed before any commitment.
 
 ## Featured projects
 - **FreshCart** — an evolving grocery-shopping product concept.
