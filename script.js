@@ -148,3 +148,32 @@ if (workFilters.length && projectCards.length) {
     });
   });
 }
+
+
+// V15 — prepare a visitor-controlled email; no form data is sent to a server.
+const enquiryForm = document.querySelector("#enquiry-form");
+if (enquiryForm) {
+  enquiryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!enquiryForm.reportValidity()) return;
+
+    const formData = new FormData(enquiryForm);
+    const interest = String(formData.get("interest") || "").trim();
+    const name = String(formData.get("name") || "").trim();
+    const replyEmail = String(formData.get("replyEmail") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const subject = `CE Technologies enquiry — ${interest}`;
+    const body = [
+      `Topic: ${interest}`,
+      name ? `Name: ${name}` : "",
+      replyEmail ? `Reply email: ${replyEmail}` : "",
+      "",
+      message
+    ].filter((line, index, lines) => line !== "" || (index > 0 && lines[index - 1] !== "")).join("\n");
+
+    const mailto = `mailto:contact.cetechnologies@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const note = document.querySelector("#enquiry-note");
+    if (note) note.textContent = "Your email app should open with your draft. Review it and choose Send there; this website has not sent or stored your message.";
+    window.location.href = mailto;
+  });
+}

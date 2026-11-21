@@ -549,3 +549,36 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
 @media(prefers-reduced-motion:reduce){
  .work-filter,.project-card,.project-art:after{transition:none}
 }
+
+
+/* V15 — a clear, accessible enquiry experience */
+.enquiry-form{display:grid;gap:15px;max-width:620px;margin-top:25px}
+.enquiry-fields-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.enquiry-field{display:grid;gap:7px;min-width:0}
+.enquiry-field label{font-size:8px;font-weight:700;letter-spacing:1.25px;color:#9eb1ca}
+.enquiry-field label span{color:#73839a;font-weight:500}
+.enquiry-field input,.enquiry-field select,.enquiry-field textarea{
+ width:100%;min-width:0;border:1px solid rgba(145,165,195,.28);border-radius:2px;
+ padding:12px 13px;background:rgba(255,255,255,.035);color:#edf4ff;
+ font:12px/1.5 var(--font);outline:none;transition:border-color .2s,background .2s,box-shadow .2s
+}
+.enquiry-field select{color-scheme:dark}
+.enquiry-field select option{background:#10213b;color:#edf4ff}
+.enquiry-field textarea{resize:vertical;min-height:112px}
+.enquiry-field input::placeholder,.enquiry-field textarea::placeholder{color:#74849a}
+.enquiry-field input:focus,.enquiry-field select:focus,.enquiry-field textarea:focus{
+ border-color:var(--v14-cyan,#7be3e9);background:rgba(104,165,255,.055);box-shadow:0 0 0 3px rgba(123,225,233,.09)
+}
+.enquiry-hint,.enquiry-note{font-size:9px;line-height:1.7;color:#8798af}
+.enquiry-hint{margin-top:-3px}
+.enquiry-submit{justify-self:start;border:0;cursor:pointer;font-family:var(--font)}
+.enquiry-note{margin:0;max-width:520px}
+@media(max-width:650px){
+ .enquiry-fields-row{grid-template-columns:1fr}
+ .enquiry-form{gap:13px}
+ .enquiry-submit{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+ .enquiry-field input,.enquiry-field select,.enquiry-field textarea{transition:none}
+}
+@media print{.enquiry-form{display:none!important}}

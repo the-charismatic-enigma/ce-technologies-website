@@ -144,7 +144,17 @@
         <div class="contact-main reveal">
           <p>HAVE AN IDEA IN MIND?</p>
           <h2>Let's start<br><em>something.</em></h2>
-          <p class="contact-description">Have a project idea, a question or an interesting possibility to explore? We'd be glad to hear from you.</p><a class="button button-primary" href="mailto:contact.cetechnologies@gmail.com?subject=Project%20enquiry%20%E2%80%94%20CE%20Technologies">Email CE Technologies <span>↗</span></a>
+          <p class="contact-description">Tell us a little about what you're exploring. We'll prepare a message you can review and send directly from your email app.</p>
+          <form class="enquiry-form" id="enquiry-form">
+            <div class="enquiry-field"><label for="enquiry-interest">WHAT'S IT ABOUT?</label><select id="enquiry-interest" name="interest" required><option value="" selected disabled>Select a topic</option><option>FreshCart</option><option>JARVIS AI</option><option>F.R.I.D.A.Y.</option><option>Website or software project</option><option>AI and automation</option><option>Learning collaboration</option><option>Something else</option></select></div>
+            <div class="enquiry-fields-row">
+              <div class="enquiry-field"><label for="enquiry-name">YOUR NAME <span>(OPTIONAL)</span></label><input id="enquiry-name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="How should we address you?"></div>
+              <div class="enquiry-field"><label for="enquiry-email">REPLY EMAIL <span>(OPTIONAL)</span></label><input id="enquiry-email" name="replyEmail" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com"></div>
+            </div>
+            <div class="enquiry-field"><label for="enquiry-message">YOUR MESSAGE</label><textarea id="enquiry-message" name="message" rows="4" maxlength="3000" required placeholder="Share the idea, question or details..."></textarea><span class="enquiry-hint">Please don't include passwords or sensitive personal information.</span></div>
+            <button class="button button-primary enquiry-submit" type="submit">Prepare email <span>↗</span></button>
+            <p class="enquiry-note" id="enquiry-note" aria-live="polite">Your message stays on your device until your email app opens. Nothing is submitted or stored by this website.</p>
+          </form>
         </div>
         <div class="contact-side reveal"><span>DIRECT CONTACT</span><a class="contact-email" href="mailto:contact.cetechnologies@gmail.com">contact.cetechnologies@gmail.com ↗</a><div class="aside-divider"></div><span>ELSEWHERE</span><a class="social-link" href="https://github.com/the-charismatic-enigma" target="_blank" rel="noopener noreferrer">GitHub ↗</a><div class="aside-divider"></div><span>OPEN TO</span><p>Project conversations<br>Learning collaborations<br>Interesting ideas</p></div>
       </section>
