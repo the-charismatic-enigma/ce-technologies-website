@@ -582,3 +582,53 @@ h1 em,h2 em,.brand-symbol span,.composition-mark span{background:linear-gradient
  .enquiry-field input,.enquiry-field select,.enquiry-field textarea{transition:none}
 }
 @media print{.enquiry-form{display:none!important}}
+
+
+/* V16 — premium enquiry studio */
+.contact-studio{display:block;padding:76px 0 88px;border-top:1px solid rgba(145,165,195,.2)}
+.contact-studio>.section-label{margin-bottom:36px}
+.contact-layout{display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(34px,7vw,100px);align-items:start}
+.contact-intro{padding:26px 0 0;max-width:470px}
+.contact-kicker{display:flex;align-items:center;gap:10px;color:#9db9d9;font-size:8px;font-weight:700;letter-spacing:1.7px;margin:0 0 25px}
+.contact-kicker-dot{width:7px;height:7px;border-radius:50%;background:#7be3e9;box-shadow:0 0 13px rgba(123,227,233,.8)}
+.contact-intro h2{font:600 clamp(43px,5.3vw,70px)/1.04 var(--display);letter-spacing:-.065em;margin:0 0 22px;color:#f1f5fc}
+.contact-intro h2 em{color:#83c5ff;font-style:normal}
+.contact-description{max-width:390px;color:#a5b5ca;font-size:13px;line-height:1.95;margin:0 0 32px}
+.contact-assurance{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;border:1px solid rgba(137,176,218,.18);background:linear-gradient(120deg,rgba(103,158,222,.09),rgba(123,227,233,.035));max-width:390px}
+.assurance-icon{display:grid;place-items:center;flex:0 0 27px;height:27px;border:1px solid rgba(123,227,233,.4);border-radius:50%;color:#8ce5e9}
+.contact-assurance b,.contact-assurance small{display:block}
+.contact-assurance b{font:600 11px var(--display);color:#e8f2ff;margin:1px 0 5px}
+.contact-assurance small{font-size:9px;line-height:1.7;color:#91a4bd}
+.contact-direct{margin-top:42px}
+.contact-direct>span{display:block;color:#7f93ad;font-size:8px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+.contact-direct a{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap;color:#dceaff;font:600 12px var(--display);border-bottom:1px solid rgba(123,227,233,.35);padding-bottom:7px}
+.contact-direct a b{color:#8ce5e9}
+.enquiry-panel{position:relative;padding:clamp(22px,3vw,34px);border:1px solid rgba(139,174,216,.24);background:linear-gradient(145deg,rgba(17,34,59,.96),rgba(8,18,34,.98));box-shadow:0 24px 70px rgba(0,0,0,.2);overflow:hidden}
+.enquiry-panel:before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#83baff,#7be3e9,transparent 85%)}
+.enquiry-panel:after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(123,227,233,.06);border-radius:50%;right:-160px;top:-160px;pointer-events:none}
+.enquiry-panel-head{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-bottom:22px;margin-bottom:23px;border-bottom:1px solid rgba(145,165,195,.16)}
+.panel-index{color:#7e9bbc;font-size:8px;font-weight:700;letter-spacing:1.6px}
+.enquiry-panel-head h3{font:600 21px var(--display);letter-spacing:-.7px;color:#f0f5ff;margin:7px 0 0}
+.panel-status{display:inline-flex;align-items:center;gap:7px;color:#91b7c4;font-size:7px;font-weight:700;letter-spacing:1.1px;white-space:nowrap}
+.panel-status i{width:6px;height:6px;border-radius:50%;background:#7be3c0;box-shadow:0 0 10px rgba(123,227,192,.7)}
+.enquiry-form{max-width:none;gap:19px;margin:0}
+.enquiry-fields-row{gap:14px}
+.enquiry-field{gap:8px}
+.enquiry-field label{display:flex;align-items:center;gap:8px;color:#d4e0f1;font-size:8px;letter-spacing:1.05px}
+.enquiry-field label>span{color:#7be3e9;font-size:8px;font-variant-numeric:tabular-nums}
+.enquiry-field label small{color:#7187a2;font-size:7px;font-weight:500;letter-spacing:1px}
+.enquiry-field input,.enquiry-field select,.enquiry-field textarea{border:1px solid rgba(145,174,208,.25);border-radius:3px;padding:13px 14px;background:rgba(4,13,27,.48);color:#edf4ff;font-size:11px;line-height:1.6;transition:border-color .2s,background .2s,box-shadow .2s}
+.enquiry-field select{appearance:none;padding-right:40px;background-image:linear-gradient(45deg,transparent 50%,#8ce5e9 50%),linear-gradient(135deg,#8ce5e9 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.enquiry-field select:invalid{color:#8192a9}
+.enquiry-field textarea{min-height:132px;resize:vertical}
+.enquiry-field input::placeholder,.enquiry-field textarea::placeholder{color:#71829a}
+.enquiry-field input:focus,.enquiry-field select:focus,.enquiry-field textarea:focus{border-color:#7be3e9;background:rgba(14,36,59,.88);box-shadow:0 0 0 3px rgba(123,227,233,.09);outline:none}
+.enquiry-message-meta{display:flex;justify-content:space-between;gap:12px;color:#7186a1;font-size:8px;line-height:1.6}
+.enquiry-submit{display:flex;justify-self:stretch;width:100%;justify-content:space-between;padding:15px 17px;border:1px solid rgba(174,220,255,.25);border-radius:3px;background:linear-gradient(105deg,#91c5ff,#8ce5e9);color:#071629;font-size:10px;letter-spacing:.2px;box-shadow:0 12px 28px rgba(91,160,240,.15)}
+.enquiry-submit .submit-arrow{font-size:17px;transition:transform .2s}
+.enquiry-submit:hover .submit-arrow{transform:translate(3px,-2px)}
+.enquiry-note{max-width:none;padding-top:3px;color:#8195ae;font-size:8px;letter-spacing:.15px}
+@media(max-width:850px){.contact-layout{grid-template-columns:1fr;gap:35px}.contact-intro{max-width:620px;padding-top:0}.contact-description{max-width:540px}.contact-direct{margin-top:25px}.enquiry-panel{max-width:680px;width:100%}}
+@media(max-width:650px){.contact-studio{padding:55px 0 62px}.contact-studio>.section-label{margin-bottom:24px}.contact-intro h2{font-size:clamp(42px,11vw,58px)}.contact-description{font-size:12px}.enquiry-panel{padding:20px 16px}.enquiry-panel-head{align-items:flex-start}.enquiry-panel-head h3{font-size:19px}.panel-status{font-size:6px}.enquiry-fields-row{grid-template-columns:1fr}.enquiry-message-meta{flex-direction:column;gap:3px}.contact-direct a{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.enquiry-submit .submit-arrow{transition:none}}
+@media print{.contact-studio{display:none!important}}
