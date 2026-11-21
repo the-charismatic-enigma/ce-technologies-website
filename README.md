@@ -2,26 +2,28 @@
 
 The official website for **Charismatic Enigma Technologies (CE Technologies)**.
 
-> Innovation. Intelligence. Impact.
+> Build what matters.
 
 ## About
 CE Technologies is an independent, student-led technology initiative exploring software development, artificial intelligence and digital experiences.
 
-## Projects featured
+## Featured projects
 - **FreshCart** — an evolving grocery-shopping product concept.
 - **JARVIS AI** — a modular personal AI assistant exploration.
 - **F.R.I.D.A.Y.** — an AI engineering and productivity workflow concept.
 
 These projects are works in progress; descriptions reflect their current development stage.
 
+## Official links
+- Website: https://the-charismatic-enigma.github.io/ce-technologies-website/
+- GitHub: https://github.com/the-charismatic-enigma
+- Email: contact.cetechnologies@gmail.com
+
 ## Run locally
 This is a static website. Open `index.html` in a browser, or serve this directory with any static file server.
 
-## Contact
-[contact.cetechnologies@gmail.com](mailto:contact.cetechnologies@gmail.com)
-
 ## Deployment
-For GitHub Pages, open **Settings → Pages**, choose **Deploy from a branch**, then select **main** and **/(root)**.
+The site is published with GitHub Pages from the repository's `main` branch. The GitHub Pages workflow builds and publishes the root of the repository.
 
 ---
 © CE Technologies.
